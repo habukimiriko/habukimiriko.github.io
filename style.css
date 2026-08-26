@@ -101,7 +101,9 @@ nav.sidebar a.active {
   z-index: 120;
 }
 .home main {
+  display: flex;
   text-align: center;
+  justify-content: center;
 }
 .overlay.open {
   opacity: 1;
