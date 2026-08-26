@@ -14,7 +14,7 @@ body {
   left: 1.5rem;
   width: 44px;
   height: 44px;
-  background: #999999;
+  background: #313131;
   border: 1px solid #eaeaea;
   border-radius: 8px;
   cursor: pointer;
@@ -101,9 +101,7 @@ nav.sidebar a.active {
   z-index: 120;
 }
 .home main {
-  display: flex;
   text-align: center;
-  justify-content: center;
 }
 .overlay.open {
   opacity: 1;
@@ -125,6 +123,7 @@ h2 {
 }
 
 main {
+  display: flex;
   max-width: 640px;
   width: 100%;
   padding: 5.5rem 1.5rem 3rem;
