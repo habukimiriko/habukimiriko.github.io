@@ -14,8 +14,8 @@ body {
   left: 1.5rem;
   width: 44px;
   height: 44px;
-  background: #1a1a1e;
-  border: 1px solid #26262b;
+  background: #666669;
+  border: 1px solid #99999b;
   border-radius: 8px;
   cursor: pointer;
   z-index: 200;
@@ -51,7 +51,7 @@ nav.sidebar {
   width: 220px;
   padding: 5.5rem 1.5rem 1.5rem;
   background: #0f0f12;
-  border-right: 1px solid #26262b;
+  border-right: 1px solid #99999b;
   transform: translateX(-100%);
   transition: transform 0.25s ease;
   z-index: 150;
