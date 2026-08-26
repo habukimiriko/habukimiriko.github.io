@@ -9,11 +9,102 @@ body {
   justify-content: center;
   min-height: 100vh;
 }
+.menu-toggle {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 44px;
+  height: 44px;
+  background: #1a1a1e;
+  border: 1px solid #26262b;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+ 
+.menu-toggle span {
+  width: 20px;
+  height: 2px;
+  background: #eaeaea;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+ 
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+ 
+nav.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 220px;
+  padding: 5.5rem 1.5rem 1.5rem;
+  background: #0f0f12;
+  border-right: 1px solid #26262b;
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+  z-index: 150;
+  box-sizing: border-box;
+}
+ 
+nav.sidebar.open {
+  transform: translateX(0);
+}
+ 
+nav.sidebar .brand {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  display: block;
+  color: #eaeaea;
+  text-decoration: none;
+}
+ 
+nav.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ 
+nav.sidebar li {
+  margin-bottom: 0.9rem;
+}
+ 
+nav.sidebar a {
+  color: #a0a0a8;
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+ 
+nav.sidebar a:hover,
+nav.sidebar a.active {
+  color: #eaeaea;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 120;
+}
 
-main {
-  max-width: 640px;
-  width: 100%;
-  padding: 3rem 1.5rem;
+.overlay.open {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 h1 {
@@ -25,7 +116,22 @@ h2 {
   font-size: 1.4rem;
   margin-top: 2rem;
 }
+.page {
+  display: flex;
+  justify-content: center;
+}
 
+@media (max-width: 640px) {
+  main {
+    padding: 5.5rem 1.5rem 2rem;
+  }
+}
+main {
+  max-width: 640px;
+  width: 100%;
+  padding: 3rem 1.5rem 3rem 5.5rem;
+  box-sizing: border-box;
+}
 p {
   color: #c8c8ce;
   line-height: 1.6;
