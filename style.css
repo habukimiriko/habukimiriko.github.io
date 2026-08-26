@@ -93,6 +93,7 @@ nav.sidebar a.active {
 }
 .overlay {
   position: fixed;
+  background: rgba(0, 0, 0, 1);
   inset: 0;
   opacity: 0;
   pointer-events: none;
