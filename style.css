@@ -100,7 +100,9 @@ nav.sidebar a.active {
   transition: opacity 0.25s ease;
   z-index: 120;
 }
-
+.home {
+  text-align: center;
+}
 .overlay.open {
   opacity: 1;
   pointer-events: auto;
