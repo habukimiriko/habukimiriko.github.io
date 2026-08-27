@@ -119,6 +119,7 @@ h2 {
 
 .page {
   display: flex;
+  justify-content: center
 }
 
 main {
