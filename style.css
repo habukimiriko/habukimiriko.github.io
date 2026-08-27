@@ -99,9 +99,7 @@ nav.sidebar a.active {
   z-index: 120;
 }
 
-.home main {
-  text-align: center;
-}
+
 .overlay.open {
   opacity: 1;
   pointer-events: auto;
@@ -121,10 +119,26 @@ h2 {
   justify-content: center;
 }
 
+.home .page {
+  min-height: 100vh;
+  align-items: center;
+}
+
+.home main {
+  padding-top: 3rem;
+}
+
 main {
   width: 100%;
+  max-width: 760px;
   padding: 5.5rem 1.5rem 3rem;
   box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  main {
+    padding-top: 10rem;
+  }
 }
 
 p {
