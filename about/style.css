@@ -99,9 +99,6 @@ nav.sidebar a.active {
   z-index: 120;
 }
 
-.home main {
-  text-align: center;
-}
 .overlay.open {
   opacity: 1;
   pointer-events: auto;
@@ -123,10 +120,17 @@ h2 {
 }
 
 main {
-  max-width: 640px;
   width: 100%;
+  max-width: 760px;
   padding: 5.5rem 1.5rem 3rem;
   box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  main {
+    padding-top: 10rem;
+    padding-left: 4rem;
+  }
 }
 
 p {
