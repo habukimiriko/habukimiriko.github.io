@@ -108,7 +108,7 @@ nav.sidebar a.active {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 6rem;
   margin-bottom: 0.5rem;
 }
 
@@ -128,7 +128,7 @@ main {
 }
 
 p {
-  font-size: 0.7rem;
+  font-size: 1.2rem;
   color: #c8c8ce;
   line-height: 1.6;
 }
