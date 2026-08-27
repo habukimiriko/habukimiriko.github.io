@@ -123,13 +123,13 @@ h2 {
 
 @media (max-width: 640px) {
   main {
-    padding: 5.5rem 1.5rem 2rem;
+    padding: 2rem 1.5rem 2rem;
   }
 }
 main {
   max-width: 640px;
   width: 100%;
-  padding: 3rem 1.5rem 3rem 5.5rem;
+  padding: 2rem 1.5rem 3rem 5.5rem;
   box-sizing: border-box;
 }
 p {
