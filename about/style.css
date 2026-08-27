@@ -116,9 +116,9 @@ h2 {
   font-size: 1.4rem;
   margin-top: 2rem;
 }
+
 .page {
   display: flex;
-  justify-content: center;
 }
 
 main {
@@ -129,7 +129,7 @@ main {
 
 p {
   color: #c8c8ce;
-  line-height: 1.6;
+  line-height: 1.2;
 }
 
 a {
