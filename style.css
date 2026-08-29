@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
-  background:
-    radial-gradient(1200px 800px at 85% -10%, rgba(88, 80, 160, 0.16), transparent 60%),
-    radial-gradient(1000px 700px at -10% 110%, rgba(46, 84, 110, 0.13), transparent 55%),
-    linear-gradient(160deg, #101014 0%, #0f0f12 45%, #12131a 100%);
-  background-attachment: fixed;
+  background: linear-gradient(165deg, #08080a 0%, #141419 45%, #34343e 100%);
   margin: 0;
   font-family: 'Crimson Text', serif;
   color: #eaeaea;
