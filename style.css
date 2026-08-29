@@ -1,11 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
-  background: #0f0f12;
+  background:
+    radial-gradient(1200px 800px at 85% -10%, rgba(88, 80, 160, 0.16), transparent 60%),
+    radial-gradient(1000px 700px at -10% 110%, rgba(46, 84, 110, 0.13), transparent 55%),
+    linear-gradient(160deg, #101014 0%, #0f0f12 45%, #12131a 100%);
+  background-attachment: fixed;
   margin: 0;
   font-family: 'Crimson Text', serif;
   color: #eaeaea;
   min-height: 100vh;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 .menu-toggle {
   position: fixed;
@@ -180,5 +193,103 @@ pre {
 .fingerprint {
   font-weight: 700;
   letter-spacing: 0.03em;
+}
+.page-intro {
+  margin-top: -0.25rem;
+  color: #a0a0a8;
+  font-style: italic;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  display: block;
+  background: rgba(26, 26, 30, 0.85);
+  border: 1px solid #2a2a32;
+  border-radius: 10px;
+  padding: 1rem 1.15rem;
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover {
+  border-color: #a8c7fa;
+  transform: translateY(-2px);
+}
+
+.card .card-title {
+  color: #eaeaea;
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin: 0 0 0.3rem;
+}
+
+.card .card-desc {
+  color: #c8c8ce;
+  font-size: 1.05rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Dated entry lists (writings, essays) */
+.entry-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.entry-list li {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid #2a2a32;
+}
+
+.entry-list li:last-child {
+  border-bottom: none;
+}
+
+.entry-list a {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.entry-list a:hover {
+  text-decoration: underline;
+}
+
+.entry-list .entry-meta {
+  display: block;
+  color: #a0a0a8;
+  font-size: 0.95rem;
+  margin-top: 0.15rem;
+}
+
+/* Contact / socials */
+.social-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.social-list li {
+  margin-bottom: 0.9rem;
+  font-size: 1.2rem;
+}
+
+.social-list .label {
+  color: #a0a0a8;
+  display: inline-block;
+  min-width: 6.5rem;
 }
 
