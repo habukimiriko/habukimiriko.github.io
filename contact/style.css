@@ -285,17 +285,19 @@ pre {
 /* Contact / socials */
 .social-list {
   list-style: none;
+  color: #eaeaea;
   padding: 0;
   margin: 1.5rem 0;
 }
 
 .social-list li {
   margin-bottom: 0.9rem;
+  color: #eaeaea;
   font-size: 1.2rem;
 }
 
 .social-list .label {
   color: #eaeaea;
   display: inline-block;
-  min-width: 6.5rem;
+  min-width: 9.5rem;
 }
