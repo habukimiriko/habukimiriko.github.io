@@ -198,7 +198,6 @@ pre {
   letter-spacing: 0.03em;
 }
 
-/* ---------- Shared bits for the new pages ---------- */
 
 .page-intro {
   margin-top: -0.25rem;
@@ -206,7 +205,6 @@ pre {
   font-style: italic;
 }
 
-/* Cards (projects, compositions) */
 .card-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -249,7 +247,6 @@ pre {
   line-height: 1.5;
 }
 
-/* Dated entry lists (writings, essays) */
 .entry-list {
   list-style: none;
   padding: 0;
@@ -282,11 +279,10 @@ pre {
   margin-top: 0.15rem;
 }
 
-/* Contact / socials */
 .social-list {
   list-style: none;
   color: #eaeaea;
-  padding: 0.3rem;
+  padding: 0.5rem;
   margin: 1.5rem 0;
 }
 
