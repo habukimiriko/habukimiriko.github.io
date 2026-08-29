@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+  /* Black at the top of the page, easing into dark grey further down.
+     Deliberately NOT fixed to the viewport: the gradient spans the full
+     page height, so scrolling visibly "moves" the background. */
+  background: linear-gradient(165deg, #08080a 0%, #141419 45%, #34343e 100%);
+  margin: 0;
+  font-family: 'Crimson Text', serif;
+  color: #eaeaea;
+  min-height: 100vh;
+}
+
+/* Faint film grain over the whole page, to break up the flat black */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.menu-toggle {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 44px;
+  height: 44px;
+  background: #313131;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+ 
+.menu-toggle span {
+  width: 20px;
+  height: 2px;
+  background: #eaeaea;
+  transition: transform 0.01s ease, opacity 0.01s ease;
+}
+ 
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+ 
+nav.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 220px;
+  padding: 5.5rem 1.5rem 1.5rem;
+  background: #0f0f12;
+  border-right: 1px solid #99999b;
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+  z-index: 150;
+  box-sizing: border-box;
+}
+ 
+nav.sidebar.open {
+  transform: translateX(0);
+}
+ 
+nav.sidebar .brand {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  display: block;
+  color: #eaeaea;
+  text-decoration: none;
+}
+ 
+nav.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ 
+nav.sidebar li {
+  margin-bottom: 0.9rem;
+}
+ 
+nav.sidebar a {
+  color: #a0a0a8;
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+ 
+nav.sidebar a:hover,
+nav.sidebar a.active {
+  color: #eaeaea;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 120;
+}
+
+.home main {
+  text-align: center;
+}
+.overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 6vw, 3rem);
+  margin-bottom: 0.75rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+}
+.page {
+  display: flex;
+  justify-content: center;
+}
+
+.home .page {
+  min-height: 100vh;
+  align-items: center;
+}
+
+.home main {
+  padding-top: 3rem;
+}
+
+main {
+  width: 100%;
+  max-width: 760px;
+  padding: 5.5rem 1.5rem 3rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  main {
+    padding-top: 10rem;
+  }
+}
+
+p {
+  font-size: 1.2rem;
+  color: #c8c8ce;
+  line-height: 1.6;
+}
+
+a {
+  color: #a8c7fa;
+}
+
+details {
+  background: #1a1a1e;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+details p {
+  margin-bottom: 0;
+}
+
+pre {
+  background: #1a1a1e;
+  padding: 1rem;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.fingerprint {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+/* ---------- Shared bits for the new pages ---------- */
+
+.page-intro {
+  margin-top: -0.25rem;
+  color: #a0a0a8;
+  font-style: italic;
+}
+
+/* Cards (projects, compositions) */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  display: block;
+  background: rgba(26, 26, 30, 0.85);
+  border: 1px solid #2a2a32;
+  border-radius: 10px;
+  padding: 1rem 1.15rem;
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover {
+  border-color: #a8c7fa;
+  transform: translateY(-2px);
+}
+
+.card .card-title {
+  color: #eaeaea;
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin: 0 0 0.3rem;
+}
+
+.card .card-desc {
+  color: #c8c8ce;
+  font-size: 1.05rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Dated entry lists (writings, essays) */
+.entry-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.entry-list li {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid #2a2a32;
+}
+
+.entry-list li:last-child {
+  border-bottom: none;
+}
+
+.entry-list a {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.entry-list a:hover {
+  text-decoration: underline;
+}
+
+.entry-list .entry-meta {
+  display: block;
+  color: #a0a0a8;
+  font-size: 0.95rem;
+  margin-top: 0.15rem;
+}
+
+/* Contact / socials */
+.social-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.social-list li {
+  margin-bottom: 0.9rem;
+  font-size: 1.2rem;
+}
+
+.social-list .label {
+  color: #a0a0a8;
+  display: inline-block;
+  min-width: 6.5rem;
+}
