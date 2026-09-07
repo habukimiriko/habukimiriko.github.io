@@ -36,7 +36,15 @@ body::before {
   justify-content: center;
   gap: 4px;
 }
- 
+
+.lang-toggle {
+  float:right;
+  font-size: 0.85rem;
+  color:#a0a0a8;
+  text-decoration; none;
+  margin-top: 0.5rem;
+}
+
 .menu-toggle span {
   width: 20px;
   height: 2px;
