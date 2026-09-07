@@ -1,10 +1,7 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=Zen+Kurenaido&display=swap');
+</style>
 
-@import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
-.zen-kurenaido-regular {
-  font-family: "Zen Kurenaido", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
 
 body {
   background: linear-gradient(165deg, #a2a3d3 0%, #9698e2 45%, #6366f1 100%);
@@ -129,11 +126,15 @@ nav.sidebar a.active {
 h1 {
   font-size: clamp(2.1rem, 6vw, 3rem);
   margin-bottom: 0.75rem;
+  font-family: "Yuji Syuku", serif;
+  font-weight: 400;
 }
 
 h2 {
   font-size: 1.4rem;
   margin-top: 2rem;
+  font-family: "Yuji Syuku", serif;
+  font-weight: 400;
 }
 .page {
   display: flex;
