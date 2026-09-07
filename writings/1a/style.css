@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
-  /* Black at the top of the page, easing into dark grey further down.
-     Deliberately NOT fixed to the viewport: the gradient spans the full
-     page height, so scrolling visibly "moves" the background. */
+
   background: linear-gradient(165deg, #a2a3d3 0%, #9698e2 45%, #6366f1 100%);
   margin: 0;
   font-family: 'Crimson Text', serif;
@@ -159,12 +157,12 @@ main {
 
 p {
   font-size: 1.2rem;
-  color: #c8c8ce;
+  color: #212121;
   line-height: 1.6;
 }
 
 a {
-  color: #a8c7fa;
+  color: #fac7ba;
 }
 
 details {
@@ -197,8 +195,6 @@ pre {
   font-weight: 700;
   letter-spacing: 0.03em;
 }
-
-/* ---------- Shared bits for the new pages ---------- */
 
 .page-intro {
   margin-top: -0.25rem;
@@ -249,7 +245,6 @@ pre {
   line-height: 1.5;
 }
 
-/* Dated entry lists (writings, essays) */
 .entry-list {
   list-style: none;
   padding: 0;
