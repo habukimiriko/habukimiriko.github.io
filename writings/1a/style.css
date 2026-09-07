@@ -38,11 +38,13 @@ body::before {
 }
 
 .lang-toggle {
-  float:right;
+  position:fixed;
+  top:1.5rem;
+  left:4rem;
   font-size: 0.85rem;
   color:#a0a0a8;
   text-decoration; none;
-  margin-top: 0.5rem;
+  z-index:200;
 }
 
 .menu-toggle span {
