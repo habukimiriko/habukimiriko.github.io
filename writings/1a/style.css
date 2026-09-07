@@ -38,14 +38,21 @@ body::before {
 }
 
 .lang-toggle {
-  position:fixed;
-  top:1.5rem;
-  left:4rem;
-  font-size: 0.85rem;
-  color:#a0a0a8;
-  text-decoration; none;
-  z-index:200;
-  line-height: 44px;
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 44px;
+  height: 44px;
+  background: #313131;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
 
 .lang-toggle:hover{
