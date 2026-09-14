@@ -183,8 +183,8 @@ main img {
 
 .float-left {
   float: left;
-  width: min(280px, 45%);
-  margin: 0.3rem 1.5rem 1rem 0;
+  width: min(320px, 45%);
+  margin: 0.3rem 1rem 1.5rem 0;
 }
 figure {
   margin: 1.5rem 0;
