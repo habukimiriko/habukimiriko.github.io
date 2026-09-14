@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>.</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .soon {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: monospace;
+      font-weight: 700;
+      font-size: 22vw;
+      letter-spacing: 0.05em;
+      color: #000;            /* hidden against the black background */
+      user-select: text;
+      cursor: default;
+    }
+
+    /* reveal on highlight */
+    .soon::selection {
+      background: #000;
+      color: #000;
+    }
+  </style>
+<base target="_blank">
+</head>
+<body>
+  <div class="soon">SOON</div>
+</body>
+</html>
