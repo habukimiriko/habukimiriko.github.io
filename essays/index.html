@@ -7,6 +7,87 @@
   <title>Essays — habukimiriko</title>
   <style>
     html { background: #101014; }
+    .format-filter {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .format-filter label {
+      color: #a0a0a8;
+      font-size: 0.95rem;
+    }
+
+    .format-filter select {
+      background: #1a1a22;
+      color: #e8e8ee;
+      border: 1px solid #2a2a32;
+      border-radius: 6px;
+      padding: 0.45rem 2rem 0.45rem 0.75rem;
+      font-size: 0.95rem;
+      font-family: inherit;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a0a0a8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 0.6rem center;
+      background-size: 1em;
+    }
+     .format-filter select:hover,
+    .format-filter select:focus {
+      border-color: #4a4a58;
+      outline: none;
+    }
+
+    .format-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #8ab4f8;
+      background: rgba(138, 180, 248, 0.1);
+      border: 1px solid rgba(138, 180, 248, 0.25);
+      border-radius: 999px;
+      padding: 0.1rem 0.55rem;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .format-tag[data-format="notes"] {
+      color: #f8c88a;
+      background: rgba(248, 200, 138, 0.1);
+      border-color: rgba(248, 200, 138, 0.25);
+    }
+
+    .format-empty {
+      display: none;
+      color: #a0a0a8;
+      font-style: italic;
+      padding: 0.9rem 0;
+    }
+    .entry-list .entry-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .entry-list .entry-date {
+      color: #a0a0a8;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .format-empty {
+      display: none;
+      color: #a0a0a8;
+      font-style: italic;
+      padding: 0.9rem 0;
+    }
   </style>
 </head>
 <body class="essays">
@@ -29,15 +110,60 @@
   <div class="page">
   <main>
     <h1>Essays</h1>
-    <p class="page-intro">Longer, more serious academic writing. For the casual stuff, see <a href="/writings/">Writings</a>.</p>
-
-    <ul class="entry-list">
-      <!-- Replace this example entry with a real essay. Duplicate the <li> for more. -->
-      <li>
-        <a href="#">Example: an essay title</a>
-        <span class="entry-meta">August 2026 — a one-line abstract of the essay.</span>
+    <p class="page-intro">Academic related writings regardless of format. For casual writings, see <a href="/writings/">Writings</a>.</p>
+      <div class="format-filter">
+        <label for="format-select">Format:</label>
+        <select id="format-select" aria-label="Filter by format">
+        <option value="all">All</option>
+        <option value="essay">Essays</option>
+        <option value="notes">Notes</option>
+      </select>
+    </div>
+    <ul class="entry-list" id="entry-list">
+      <!--
+        Each entry needs a data-format attribute ("essay" or "notes" for now).
+        To add a new format (e.g. books), just add the option above and use
+        data-format="books" on the entry's <li>.
+      -->
+      <li data-format="essay">
+        <div class="entry-head">
+          <a href="#">Invalid</a>
+          <span class="entry-date">3-5 Business Days</span>
+        </div>
+        <span class="entry-meta"><span class="format-tag">Essay</span>This is a placeholder note. Come back soon!.</span>
+      </li>
+      <li data-format="notes">
+        <div class="Demo Notes">
+          <a href="#">Invalid</a>
+          <span class="entry-date">3-5 Business Days</span>
+        </div>
+        <span class="entry-meta"><span class="format-tag" data-format="notes">Notes</span>This is a placeholder note. Come back soon!</span>
       </li>
     </ul>
+    <p class="format-empty" id="format-empty">Nothing here yet — check back soon.</p>
+
+    <script>
+      (function () {
+        var select = document.getElementById('format-select');
+        var list = document.getElementById('entry-list');
+        var empty = document.getElementById('format-empty');
+
+        function applyFilter() {
+          var value = select.value;
+          var visible = 0;
+          var items = list.querySelectorAll('li');
+          for (var i = 0; i < items.length; i++) {
+            var show = value === 'all' || items[i].getAttribute('data-format') === value;
+            items[i].style.display = show ? '' : 'none';
+            if (show) visible++;
+          }
+          empty.style.display = visible === 0 ? 'block' : 'none';
+        }
+
+        select.addEventListener('change', applyFilter);
+        applyFilter();
+      })();
+    </script>
   </main>
   </div>
   <script src="/nav.js" defer></script>
