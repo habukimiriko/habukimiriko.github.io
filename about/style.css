@@ -177,13 +177,13 @@ main img {
    <img class="float-right" src="..." alt="...">  (or "float-left") */
 .float-right {
   float: right;
-  width: min(230px, 45%);
-  margin: 0.3rem 0 1rem 1.5rem;
+  width: min(280px, 45%);
+  margin: 0.3rem 1rem 1.5rem 0;
 }
 
 .float-left {
   float: left;
-  width: min(230px, 45%);
+  width: min(280px, 45%);
   margin: 0.3rem 1.5rem 1rem 0;
 }
 figure {
