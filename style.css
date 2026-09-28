@@ -289,3 +289,13 @@ pre {
   min-width: 6.5rem;
 }
 
+nav.sidebar a.secret {
+  color: #2c2c33;
+  transition: color 10s ease;
+}
+
+nav.sidebar a.secret:hover,
+nav.sidebar a.secret:focus-visible,
+nav.sidebar a.secret.active {
+  color: #494955;
+}
