@@ -1,0 +1,155 @@
+/* ============================================================
+   reader.css — shared READ MODE stylesheet
+   Used by: /writings/<work>/ch/*.html  and  /essays/*.html
+   No sidebar, no JS. Pure reading typography + minimal chrome.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --reader-bg: #101014;
+  --reader-text: #e6e3da;
+  --reader-muted: #8a8a92;
+  --reader-accent: #a2a3d3;
+  --reader-rule: #2a2a32;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body.reader {
+  background: var(--reader-bg);
+  color: var(--reader-text);
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Faint film grain, matching the rest of the site */
+body.reader::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Top bar: work title + back link + lang toggle ---------- */
+
+.reader-top {
+  position: relative;
+  z-index: 2;
+  max-width: 65ch;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+
+.reader-top .back {
+  color: var(--reader-muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.reader-top .back:hover { color: var(--reader-accent); }
+
+.reader-top .work-title {
+  color: var(--reader-muted);
+  font-style: italic;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reader-top .lang-toggle {
+  margin-left: auto;
+  color: var(--reader-muted);
+  text-decoration: none;
+  border: 1px solid var(--reader-rule);
+  border-radius: 6px;
+  padding: 0.1rem 0.55rem;
+  white-space: nowrap;
+}
+.reader-top .lang-toggle:hover { color: var(--reader-accent); border-color: var(--reader-accent); }
+
+/* ---------- The text itself ---------- */
+
+.reader-main {
+  position: relative;
+  z-index: 2;
+  max-width: 65ch;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.reader-main h1.chapter-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 1rem 0 0.25rem;
+}
+
+.reader-main .chapter-sub {
+  color: var(--reader-muted);
+  font-style: italic;
+  margin: 0 0 2.5rem;
+}
+
+.reader-main p { margin: 0 0 1.4em; }
+
+/* Scene break */
+.reader-main hr {
+  border: none;
+  text-align: center;
+  margin: 2.5rem 0;
+}
+.reader-main hr::after {
+  content: "⁂";
+  color: var(--reader-muted);
+  letter-spacing: 0.5em;
+}
+
+/* ---------- Bottom chapter nav ---------- */
+
+.chapter-nav {
+  position: relative;
+  z-index: 2;
+  max-width: 65ch;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-top: 1px solid var(--reader-rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+.chapter-nav a {
+  color: var(--reader-accent);
+  text-decoration: none;
+}
+.chapter-nav a:hover { text-decoration: underline; }
+
+.chapter-nav .disabled {
+  color: var(--reader-rule);
+  pointer-events: none;
+}
+
+.chapter-nav .to-top {
+  color: var(--reader-muted);
+  font-size: 0.9rem;
+}
+
+/* Japanese text: vertical-friendly font stack hook.
+   Add class="jp" on <body> alongside "reader" for JP chapters. */
+body.reader.jp {
+  font-family: 'Zen Kurenaido', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+}
