@@ -1,0 +1,123 @@
+/* Per-work BROWSE mode styles: /writings/vestige/ landing page.
+   This is where the work's identity lives (your indigo theme).
+   Chapter pages do NOT use this — they use /writings/reader.css. */
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+  background: linear-gradient(165deg, #a2a3d3 0%, #9698e2 45%, #6366f1 100%);
+  margin: 0;
+  font-family: 'Crimson Text', serif;
+  color: #090909;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.menu-toggle {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 44px;
+  height: 44px;
+  background: #313131;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.menu-toggle span { width: 20px; height: 2px; background: #eaeaea; }
+.menu-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.menu-toggle.open span:nth-child(2) { opacity: 0; }
+.menu-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.lang-toggle {
+  position: fixed;
+  top: 1.5rem;
+  left: 4.5rem;
+  height: 44px;
+  padding: 0 0.9rem;
+  background: #313131;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  color: #c9c9cf;
+  text-decoration: none;
+}
+.lang-toggle:hover { color: #eaeaea; }
+
+nav.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 220px;
+  padding: 5.5rem 1.5rem 1.5rem;
+  background: #0f0f12;
+  border-right: 1px solid #99999b;
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+  z-index: 150;
+  box-sizing: border-box;
+}
+nav.sidebar.open { transform: translateX(0); }
+nav.sidebar .brand { font-size: 1.3rem; font-weight: 700; color: #eaeaea; text-decoration: none; }
+nav.sidebar ul { list-style: none; padding: 0; margin-top: 2rem; }
+nav.sidebar li { margin: 0.75rem 0; }
+nav.sidebar a { color: #c9c9cf; text-decoration: none; }
+nav.sidebar a:hover, nav.sidebar a.active { color: #ffffff; }
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 100;
+}
+.overlay.open { opacity: 1; pointer-events: auto; }
+
+.page {
+  position: relative;
+  z-index: 2;
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 4rem;
+}
+
+.page h1 { font-size: 2.4rem; margin-bottom: 0.25rem; }
+.work-meta { color: #2e2e5e; font-style: italic; margin-top: 0; }
+.synopsis { max-width: 60ch; line-height: 1.7; }
+
+/* ---- Table of contents ---- */
+.toc { list-style: none; padding: 0; margin-top: 2.5rem; }
+.toc li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(9,9,9,0.18);
+}
+.toc a {
+  color: #090909;
+  text-decoration: none;
+  font-size: 1.15rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.toc a:hover { text-decoration: underline; }
+.toc .ch-num { color: #3b3b6e; font-variant-numeric: tabular-nums; }
